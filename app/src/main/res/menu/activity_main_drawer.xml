@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_todo_list"
+            android:icon="@drawable/baseline_format_list_bulleted_black_18dp"
+            android:title="@string/menu_todo_list" />
+        <item
+            android:id="@+id/nav_statistic"
+            android:icon="@drawable/baseline_stacked_bar_chart_black_18dp"
+            android:title="@string/menu_statistic" />
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/baseline_info_black_18dp"
+            android:title="@string/info" />
+    </group>
+</menu>
