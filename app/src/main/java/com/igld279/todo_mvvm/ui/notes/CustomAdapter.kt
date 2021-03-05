@@ -41,7 +41,7 @@ class CustomAdapter(_myNotes: List<MyNote>,
         holder.checkBoxTaskOne.isChecked = currentItemCheckBox
 
         holder.constraintLayoutOne.setOnClickListener{
-            listener.onItemClick(it, position)
+            listener.onItemClick(myNotes[position], position)
         }
 
         holder.checkBoxTaskOne.setOnClickListener {

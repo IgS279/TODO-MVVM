@@ -119,7 +119,10 @@ class NotesFragment : Fragment(), OnCustomClickListener {
         }
     }
 
-    override fun onItemClick(view: View, position: Int) {
+    override fun onItemClick(item: MyNote, position: Int) {
+        val intent = Intent(context, NewNoteActivity::class.java)
+        intent.putExtra("myNoteEdit", item)
+        context?.startActivity(intent)
         Toast.makeText(context, "clicked $position", Toast.LENGTH_SHORT).show()
     }
 
