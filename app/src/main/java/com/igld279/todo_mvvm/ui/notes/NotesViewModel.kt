@@ -1,9 +1,6 @@
 package com.igld279.todo_mvvm.ui.notes
 
 import android.app.Application
-import android.util.Log
-import android.view.View
-import android.widget.CheckBox
 import androidx.lifecycle.*
 import com.igld279.todo_mvvm.db.AppDatabase
 import com.igld279.todo_mvvm.db.MyNote
@@ -26,10 +23,5 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     suspend fun deleteNote(myNote: MyNote?) = myNoteDao.delete(myNote)
 
     suspend fun updateNote(myNote: MyNote) = myNoteDao.update(myNote)
-
-
-
-
-
 
 }
