@@ -1,7 +1,6 @@
 package com.igld279.todo_mvvm.ui.notes
 
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
@@ -11,11 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.igld279.todo_mvvm.R
 import com.igld279.todo_mvvm.db.MyNote
 
-class CustomAdapter(_myNotes: List<MyNote>,
+class CustomAdapter(private var myNotes: List<MyNote>,
                     private val listener: OnCustomClickListener)
     : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
-
-    private var myNotes = _myNotes
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textViewTaskOne: TextView = itemView.findViewById(R.id.textViewNoteOne)
@@ -63,5 +60,3 @@ class CustomAdapter(_myNotes: List<MyNote>,
 
     override fun getItemCount(): Int = myNotes.size
 }
-
-

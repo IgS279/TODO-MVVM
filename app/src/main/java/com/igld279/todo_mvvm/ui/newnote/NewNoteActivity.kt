@@ -10,27 +10,25 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
 class NewNoteActivity : AppCompatActivity() {
 
     private lateinit var editTextTitle: EditText
     private lateinit var editTextTODO: EditText
-
     private lateinit var myNoteEdit: MyNote
-
     private lateinit var newNoteViewModel: NewNoteViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_note)
 
-        supportActionBar?.title = "NewTODO"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.apply {
+            title = getString(R.string.new_todo)
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
-        editTextTitle = findViewById<EditText>(R.id.editTextTitle)
-        editTextTODO = findViewById<EditText>(R.id.editTextTODO)
+        editTextTitle = findViewById(R.id.editTextTitle)
+        editTextTODO = findViewById(R.id.editTextTODO)
 
         newNoteViewModel = ViewModelProvider(this).get(NewNoteViewModel::class.java)
 
@@ -39,7 +37,6 @@ class NewNoteActivity : AppCompatActivity() {
             editTextTitle.setText(myNoteEdit.titleText)
             editTextTODO.setText(myNoteEdit.todoText)
         }
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -60,7 +57,6 @@ class NewNoteActivity : AppCompatActivity() {
                 CoroutineScope(Dispatchers.Main).launch {
                     newNoteViewModel.insert(myNote)
                 }
-
             }
         }
     }

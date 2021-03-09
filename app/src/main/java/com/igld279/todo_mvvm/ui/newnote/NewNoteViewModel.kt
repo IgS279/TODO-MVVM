@@ -15,6 +15,4 @@ class NewNoteViewModel(application: Application) : AndroidViewModel(application)
 
     suspend fun update(myNote: MyNote) = myNoteDao.update(myNote)
 
-
-
 }

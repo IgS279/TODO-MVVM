@@ -20,6 +20,6 @@
     <fragment
         android:id="@+id/nav_info"
         android:name="com.igld279.todo_mvvm.ui.info.InfoFragment"
-        android:label="@string/info"
+        android:label="@string/menu_info"
         tools:layout="@layout/fragment_info" />
 </navigation>

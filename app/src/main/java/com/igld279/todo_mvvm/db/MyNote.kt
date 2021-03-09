@@ -12,5 +12,3 @@ data class MyNote(
         @ColumnInfo(name = "todoText") val todoText: String?,
         @ColumnInfo(name = "done") var done: Boolean = false,
     ) : Serializable
-
-

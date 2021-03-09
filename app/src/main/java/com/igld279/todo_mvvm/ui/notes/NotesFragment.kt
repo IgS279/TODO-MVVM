@@ -1,9 +1,7 @@
 package com.igld279.todo_mvvm.ui.notes
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.CheckBox
 import android.widget.Toast
@@ -30,7 +28,6 @@ class NotesFragment : Fragment(), OnCustomClickListener {
     private var adapter : CustomAdapter? = null
 
     private lateinit var notesViewModel: NotesViewModel
-
 
     override fun onCreateView(
             inflater: LayoutInflater,

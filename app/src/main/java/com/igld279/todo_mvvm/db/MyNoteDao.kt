@@ -9,20 +9,11 @@ interface MyNoteDao {
     @Query("SELECT * FROM MyNote")
     fun getAllLiveData(): LiveData<List<MyNote>>
 
-
     @Query("SELECT * FROM MyNote")
     suspend fun getAll(): List<MyNote>
 
-    /*@Query("SELECT * FROM MyNote")
-    suspend fun getAllForStat(): List<MyNote>*/
-
-
     @Query("SELECT * FROM MyNote WHERE done IN (:done)")
     suspend fun getAllActiveOrCompleted(done: Boolean): List<MyNote>
-
-    /*@Query("SELECT * FROM MyNote WHERE done IN (:done)")
-    suspend fun getAllActiveOrCompletedForStat(done: Boolean): List<MyNote>*/
-
 
     @Delete
     suspend fun delete(myNote: MyNote?)
@@ -32,4 +23,5 @@ interface MyNoteDao {
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun update(myNote: MyNote)
+
 }

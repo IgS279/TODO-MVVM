@@ -1,12 +1,7 @@
 <resources>
     <string name="app_name">TODO-MVVM</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="nav_header_title">TODO-MVVM</string>
-    <string name="nav_header_subtitle">null</string>
-
-    <string name="nav_header_desc">Navigation header</string>
 
     <string name="action_all">All</string>
     <string name="action_active">Active</string>
@@ -14,15 +9,16 @@
 
     <string name="menu_todo_list">TODO List</string>
     <string name="menu_statistic">Statistics</string>
-    <string name="info">Info</string>
+    <string name="menu_info">Info</string>
+    <string name="new_todo">NewTODO</string>
 
     <string name="hint_title">Title</string>
     <string name="hint_TODO">TODO</string>
 
-    <string name="action_del">delete</string>
-    <string name="action_rez">rez</string>
-
     <string name="all">All: </string>
     <string name="active">Active:</string>
     <string name="completed">Completed:</string>
+
+    <string name="link_git_hub">https://github.com/IgS279/TODO-MVVM
+        <a href="https://github.com/IgS279/TODO-MVVM">Google</a></string>
 </resources>
