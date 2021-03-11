@@ -9,13 +9,14 @@ import com.igld279.todo_mvvm.db.MyNote
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 class NewNoteActivity : AppCompatActivity() {
 
     private lateinit var editTextTitle: EditText
     private lateinit var editTextTODO: EditText
     private lateinit var myNoteEdit: MyNote
-    private lateinit var newNoteViewModel: NewNoteViewModel
+    private val newNoteViewModel: NewNoteViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +30,6 @@ class NewNoteActivity : AppCompatActivity() {
 
         editTextTitle = findViewById(R.id.editTextTitle)
         editTextTODO = findViewById(R.id.editTextTODO)
-
-        newNoteViewModel = ViewModelProvider(this).get(NewNoteViewModel::class.java)
 
         if (intent.getSerializableExtra("myNoteEdit") != null) {
             myNoteEdit = intent.getSerializableExtra("myNoteEdit") as MyNote

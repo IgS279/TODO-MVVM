@@ -6,10 +6,8 @@ import com.igld279.todo_mvvm.db.AppDatabase
 import com.igld279.todo_mvvm.db.MyNote
 import com.igld279.todo_mvvm.db.MyNoteDao
 
-class NotesViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val db: AppDatabase = AppDatabase.getDatabase(application)
-    private val myNoteDao: MyNoteDao = db.myNoteDao()
+class NotesViewModel(application: Application, private val myNoteDao: MyNoteDao)
+    : AndroidViewModel(application) {
 
     fun getNotesLiveData() = myNoteDao.getAllLiveData()
 

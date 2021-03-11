@@ -17,24 +17,21 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
+import org.koin.android.ext.android.inject
 
 class NotesFragment : Fragment(), OnCustomClickListener {
 
     private lateinit var root: View
     private lateinit var myNotes: List<MyNote>
-
     private lateinit var mainRecyclerView: RecyclerView
     private var adapter : CustomAdapter? = null
-
-    private lateinit var notesViewModel: NotesViewModel
+    private val notesViewModel: NotesViewModel by inject()
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        notesViewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
         root = inflater.inflate(R.layout.fragment_notes, container, false)
         setHasOptionsMenu(true)
         return root
@@ -49,7 +46,6 @@ class NotesFragment : Fragment(), OnCustomClickListener {
             mainRecyclerView.adapter = adapter
         })
     }
-
 
 
     private fun setCustomAdapter(myNotes: List<MyNote>){
@@ -98,7 +94,6 @@ class NotesFragment : Fragment(), OnCustomClickListener {
         }
         return super.onOptionsItemSelected(item)
     }
-
 
 
     override fun onItemCheckBoxClick(view: View, item: MyNote) {

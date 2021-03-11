@@ -9,18 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.igld279.todo_mvvm.R
+import org.koin.android.ext.android.inject
 
 class StatisticsFragment : Fragment() {
 
-    private lateinit var statisticsViewModel: StatisticsViewModel
+    private val statisticsViewModel: StatisticsViewModel by inject()
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        statisticsViewModel =
-                ViewModelProvider(this).get(StatisticsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_statistics, container, false)
 
         val textStatisticsAll: TextView = root.findViewById(R.id.textStatisticsAll)

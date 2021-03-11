@@ -6,10 +6,8 @@ import com.igld279.todo_mvvm.db.AppDatabase
 import com.igld279.todo_mvvm.db.MyNote
 import com.igld279.todo_mvvm.db.MyNoteDao
 
-class NewNoteViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val db: AppDatabase = AppDatabase.getDatabase(application)
-    private val myNoteDao: MyNoteDao = db.myNoteDao()
+class NewNoteViewModel(application: Application, private val myNoteDao: MyNoteDao)
+    : AndroidViewModel(application) {
 
     suspend fun insert(myNote: MyNote) = myNoteDao.insert(myNote)
 

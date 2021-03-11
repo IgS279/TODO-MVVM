@@ -11,16 +11,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class StatisticsViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val db: AppDatabase = AppDatabase.getDatabase(application)
-    private val myNoteDao: MyNoteDao = db.myNoteDao()
+class StatisticsViewModel(application: Application, private val myNoteDao: MyNoteDao)
+    : AndroidViewModel(application) {
 
     private var textAll = MutableLiveData<String>()
     private val textActive = MutableLiveData<String>()
     private val textCompleted = MutableLiveData<String>()
-
-
 
     fun textAll(): LiveData<String> {
         CoroutineScope(Dispatchers.Main).launch{
